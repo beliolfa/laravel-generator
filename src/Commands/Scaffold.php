@@ -37,6 +37,6 @@ class Scaffold extends Command
         ]);
 
         Storage::delete(app_path("Repositories/{$model}Repository.php"));
-        $this->info("Repositories/{$model}Repository.php sin uso eliminado.");
+        $this->info(app_path("Repositories/{$model}Repository.php") . ' sin uso eliminado.');
     }
 }
