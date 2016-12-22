@@ -29,10 +29,13 @@ class Scaffold extends Command
     public function handle()
     {
         $model = $this->argument('model');
+        
         $this->call('infyom:scaffold', [
             'model' => $model,
             '--skip' => 'scaffold_requests'
         ]);
-        $this->info("Scaffolding para $model creado.");
+
+        Storage::delete(app_path("Repositories/{$model}Repository.php"));
+        $this->info("Repositories/{$model}Repository.php sin uso eliminado.");
     }
 }
