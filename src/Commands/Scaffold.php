@@ -29,7 +29,7 @@ class Scaffold extends Command
     public function handle()
     {
         $model = $this->argument('model');
-        $this->callSilent('infyom:scaffold', [
+        $this->call('infyom:scaffold', [
             'model' => $model,
             '--skip' => 'scaffold_requests'
         ]);
