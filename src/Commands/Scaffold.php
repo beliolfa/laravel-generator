@@ -29,8 +29,9 @@ class Scaffold extends Command
     public function handle()
     {
         $model = $this->argument('model');
-        $this->call('infyom:migration', [
-            'model' => $model
+        $this->callSilent('infyom:scaffold', [
+            'model' => $model,
+            '--skip' => 'scaffold_requests'
         ]);
         $this->info("Scaffolding para $model creado.");
     }
