@@ -2,6 +2,7 @@
 
 namespace Disitec\LaravelGenerator;
 
+use Disitec\LaravelGenerator\Commands\Scaffold;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelGeneratorServiceProvider extends ServiceProvider
@@ -13,6 +14,12 @@ class LaravelGeneratorServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Scaffold::class,
+            ]);
+        }
+        
         $this->publishes([
             __DIR__.'/../templates/scaffold/controller' => resource_path('infyom/infyom-generator-templates/scaffold/controller')
         ], 'simplified-controller');

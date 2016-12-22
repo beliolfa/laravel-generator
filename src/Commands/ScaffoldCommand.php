@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Disitec\LaravelGenerator\Commands;
 
-use App\User;
-use App\DripEmailer;
 use Illuminate\Console\Command;
 
 class Scaffold extends Command
