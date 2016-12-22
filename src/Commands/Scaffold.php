@@ -3,6 +3,7 @@
 namespace Disitec\LaravelGenerator\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class Scaffold extends Command
 {
@@ -29,7 +30,7 @@ class Scaffold extends Command
     public function handle()
     {
         $model = $this->argument('model');
-        
+
         $this->call('infyom:scaffold', [
             'model' => $model,
             '--skip' => 'scaffold_requests'
