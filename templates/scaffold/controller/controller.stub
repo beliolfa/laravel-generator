@@ -1,0 +1,111 @@
+<?php
+
+namespace $NAMESPACE_CONTROLLER$;
+
+use Flash;
+use Response;
+use Illuminate\Http\Request;
+use $NAMESPACE_MODEL$\$MODEL_NAME$;
+
+class $MODEL_NAME$Controller extends Controller
+{
+    /**
+     * Display all the $MODEL_NAME_PLURAL$.
+     *
+     * @return Response
+     */
+
+    public function index()
+    {
+        $$MODEL_NAME_PLURAL_CAMEL$ = $MODEL_NAME$::all();
+
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.index', compact('$MODEL_NAME_PLURAL_CAMEL$'));
+    }
+
+    /**
+     * Show the form for creating a new $MODEL_NAME$.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.create');
+    }
+
+    /**
+     * Store a newly created $MODEL_NAME$ in storage.
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, $MODEL_NAME$::$rules);
+
+        $MODEL_NAME$::create($request->all());
+
+        Flash::success('$MODEL_NAME_HUMAN$ creado con éxito.');
+
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+
+    /**
+     * Display the specified $MODEL_NAME$.
+     *
+     * @param  $MODEL_NAME$ $$MODEL_NAME_CAMEL$
+     *
+     * @return Response
+     */
+    public function show($MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show', compact('$MODEL_NAME_CAMEL$'));
+    }
+
+    /**
+     * Show the form for editing the specified $MODEL_NAME$.
+     *
+     * @param  $MODEL_NAME$ $$MODEL_NAME_CAMEL$
+     *
+     * @return Response
+     */
+    public function edit($MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.edit', compact('$MODEL_NAME_CAMEL$'));
+    }
+
+    /**
+     * Update the specified $MODEL_NAME$ in storage.
+     *
+     * @param  $MODEL_NAME$ $$MODEL_NAME_CAMEL$
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function update(Request $request, $MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        $this->validate($request, $MODEL_NAME$::$rules);
+
+        $$MODEL_NAME_CAMEL$->update($request->all());
+
+        Flash::success('$MODEL_NAME_HUMAN$ actualizado con éxito.');
+
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+
+    /**
+     * Remove the specified $MODEL_NAME$ from storage.
+     *
+     * @param  $MODEL_NAME$ $$MODEL_NAME_CAMEL$
+     *
+     * @return Response
+     */
+    public function destroy($MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        $$MODEL_NAME_CAMEL$->delete();
+
+        Flash::success('$MODEL_NAME_HUMAN$ eliminado con éxito.');
+
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+}
