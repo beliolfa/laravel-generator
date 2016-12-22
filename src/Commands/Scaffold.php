@@ -3,7 +3,6 @@
 namespace Disitec\LaravelGenerator\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
 
 class Scaffold extends Command
 {
@@ -36,7 +35,11 @@ class Scaffold extends Command
             '--skip' => 'scaffold_requests'
         ]);
 
-        Storage::delete(app_path("Repositories/{$model}Repository.php"));
-        $this->info(app_path("Repositories/{$model}Repository.php") . ' sin uso eliminado.');
+        $path = app_path("Repositories/{$model}Repository.php");
+        if (file_exists($path)) {
+            if (unlink($path)){
+                $this->info("{$model}Repository.php eliminado.");
+            }
+        }
     }
 }
