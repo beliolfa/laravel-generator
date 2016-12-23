@@ -13,8 +13,11 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "~5.0"
+      "php": ">=5.5.9",
+      "illuminate/support": "~5.0",
+      "infyomlabs/laravel-generator": "5.3.x-dev",
+      "laravelcollective/html": "dev-master",
+      "disitec/bulma-templates": "dev-master"
     },
     "autoload": {
         "psr-4": {
