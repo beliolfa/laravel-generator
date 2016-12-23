@@ -20,6 +20,8 @@ class LaravelGeneratorServiceProvider extends ServiceProvider
             ]);
         }
         
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'laravel-generator');
+        
         $this->publishes([
             __DIR__.'/../templates/scaffold/controller' => resource_path('infyom/infyom-generator-templates/scaffold/controller')
         ], 'simplified-controller');
