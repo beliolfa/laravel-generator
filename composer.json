@@ -12,6 +12,7 @@
             "email": "fjmartinez@disitec.es"
         }
     ],
+    "minimun-stability": "dev",
     "require": {
       "php": ">=5.5.9",
       "illuminate/support": "~5.0",
