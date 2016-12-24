@@ -36,6 +36,12 @@ class Scaffold extends Command
             '--skip' => 'scaffold_requests, repository'
         ]);
 
-        $this->info(Translate::controller($model));
+        $translate = new Translate($model);
+        
+        $translate->controller();
+        $translate->views();
+        
+        $this->info('Views translated');
+
     }
 }

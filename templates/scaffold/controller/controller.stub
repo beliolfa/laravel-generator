@@ -45,7 +45,7 @@ class $MODEL_NAME$Controller extends Controller
 
         $MODEL_NAME$::create($request->all());
 
-        Flash::success('#$MODEL_NAME_HUMAN$# creado con éxito.');
+        Flash::success('#-$MODEL_NAME_HUMAN$-# creado con éxito.');
 
         return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -88,7 +88,7 @@ class $MODEL_NAME$Controller extends Controller
 
         $$MODEL_NAME_CAMEL$->update($request->all());
 
-        Flash::success('#$MODEL_NAME_HUMAN$# actualizado con éxito.');
+        Flash::success('#-$MODEL_NAME_HUMAN$-# actualizado con éxito.');
 
         return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -104,7 +104,7 @@ class $MODEL_NAME$Controller extends Controller
     {
         $$MODEL_NAME_CAMEL$->delete();
 
-        Flash::success('#$MODEL_NAME_HUMAN$# eliminado con éxito.');
+        Flash::success('#-$MODEL_NAME_HUMAN$-# eliminado con éxito.');
 
         return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
