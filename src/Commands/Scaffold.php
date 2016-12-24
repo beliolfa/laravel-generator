@@ -2,6 +2,7 @@
 
 namespace Disitec\LaravelGenerator\Commands;
 
+use Disitec\LaravelGenerator\Translator\Translate;
 use Illuminate\Console\Command;
 
 class Scaffold extends Command
@@ -18,7 +19,7 @@ class Scaffold extends Command
      *
      * @var string
      */
-    protected $description = 'Scaffold Model, Controller and Views';
+    protected $description = 'Scaffold Model, Migration, Controller and Views';
 
 
     /**
@@ -34,5 +35,7 @@ class Scaffold extends Command
             'model' => $model,
             '--skip' => 'scaffold_requests, repository'
         ]);
+
+        $this->info(Translate::controller($model));
     }
 }

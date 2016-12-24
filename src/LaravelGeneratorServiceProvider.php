@@ -20,11 +20,12 @@ class LaravelGeneratorServiceProvider extends ServiceProvider
             ]);
         }
         
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'laravel-generator');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'disitec');
         
         $this->publishes([
+            __DIR__.'/../lang' => resource_path('lang/vendor/disitec'),
             __DIR__.'/../templates/scaffold/controller' => resource_path('infyom/infyom-generator-templates/scaffold/controller')
-        ], 'simplified-controller');
+        ], 'disitec-generator');
     }
 
     /**
