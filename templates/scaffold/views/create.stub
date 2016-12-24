@@ -1,0 +1,27 @@
+@extends('layouts.app')
+
+@section('content')
+<section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    $MODEL_NAME_HUMAN$
+                </h1>
+                <h2 class="subtitle ">
+                    Crear nuevo registro
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container is-fluid" style="margin-top: 2em">
+        @include('bulma-templates::common.errors')
+
+        {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+        <div class="box">
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+        </div>
+        {!! Form::close() !!}
+    </div>
+
+@endsection

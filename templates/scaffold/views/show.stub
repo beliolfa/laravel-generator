@@ -1,0 +1,24 @@
+@extends('layouts.app')
+
+@section('content')
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    $MODEL_NAME_PLURAL_HUMAN$
+                </h1>
+                <h2 class="subtitle">
+                Mostrando registro: {{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container is-fluid" style="margin-top: 2em">
+        <div class="box">
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
+            <br>
+            <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="button is-light">Volver</a>
+        </div>
+    </div>
+@endsection

@@ -1,0 +1,26 @@
+@extends('layouts.app')
+
+@section('content')
+    <section class="hero is-warning">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    $MODEL_NAME_HUMAN$
+                </h1>
+                <h2 class="subtitle ">
+                    Editar registro: {{ $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$ }}
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container is-fluid" style="margin-top: 2em">
+       @include('bulma-templates::common.errors')
+
+       {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch']) !!}
+        <div class="box">
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+        </div>
+       {!! Form::close() !!}
+    </div>
+@endsection

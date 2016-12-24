@@ -1,0 +1,7 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+{!! Form::label('$FIELD_NAME$', '#$FIELD_NAME_TITLE$#:', ['class' => 'label']) !!}
+<p class="control">
+  <span class="select">
+        {!! Form::select('$FIELD_NAME$', $INPUT_ARR$, null, []) !!}
+  </span>
+</p>

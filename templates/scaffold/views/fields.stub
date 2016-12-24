@@ -1,0 +1,7 @@
+$FIELDS$
+
+<!-- Submit Field -->
+<div class="section">
+    {!! Form::submit('Guardar', ['class' => 'button is-primary']) !!}
+    <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="button is-light">Cancelar</a>
+</div>

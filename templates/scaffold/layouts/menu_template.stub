@@ -1,0 +1,8 @@
+<li>
+    <a
+        href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}"
+        class="{{ Request::is('$MODEL_NAME_PLURAL_CAMEL$*') ? 'is-active' : '' }} item"
+    >
+        <span class="is-icon"><i class="fa fa-home"></i></span>&nbsp<span class="name">$MODEL_NAME_PLURAL$</span>
+    </a>
+</li>
