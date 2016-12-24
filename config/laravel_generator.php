@@ -55,7 +55,7 @@ return [
 
     'namespace' => [
 
-        'model'             => 'App\Models',
+        'model'             => 'App\Entities',
 
         'datatables'        => 'App\DataTables',
 
