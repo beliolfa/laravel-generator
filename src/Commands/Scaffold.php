@@ -32,14 +32,7 @@ class Scaffold extends Command
 
         $this->call('infyom:scaffold', [
             'model' => $model,
-            '--skip' => 'scaffold_requests'
+            '--skip' => 'scaffold_requests, repository'
         ]);
-
-        $path = app_path("Repositories/{$model}Repository.php");
-        if (file_exists($path)) {
-            if (unlink($path)){
-                $this->info("{$model}Repository.php eliminado.");
-            }
-        }
     }
 }
