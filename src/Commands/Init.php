@@ -28,7 +28,7 @@ class Init extends Command
      */
     public function handle()
     {
-        $this->callSilent('vendor:publish', [
+        $this->call('vendor:publish', [
             '--tag' => 'disitec-generator.init'
         ]);
     }

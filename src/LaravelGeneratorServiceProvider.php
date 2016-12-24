@@ -27,7 +27,7 @@ class LaravelGeneratorServiceProvider extends ServiceProvider
         
         $this->publishes([
             __DIR__.'/../lang' => resource_path('lang/vendor/disitec'),
-        ], 'disitec-lang');
+        ], 'disitec-generator.lang');
 
         $this->publishes([
             __DIR__.'/../config/laravel_generator.php' => config_path('infyom/laravel_generator.php'),
