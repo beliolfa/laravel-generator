@@ -18,7 +18,7 @@
             $FIELD_BODY$
             <td class="is-icon"><a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) !!}"><i class="fa fa-eye"></i></a></td>
             <td class="is-icon"><a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) !!}"><i class="fa fa-edit"></i></a></td>
-            <td class="is-icon">{!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'button is-link', 'onclick' => "return confirm('¿Estás seguro?')"]) !!}</td>
+            <td class="is-icon">{!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'button is-danger is-small', 'onclick' => "return confirm('¿Estás seguro?')"]) !!}</td>
             {!! Form::close() !!}
         </tr>
     @endforeach
