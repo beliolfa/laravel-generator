@@ -1,7 +1,7 @@
 <!-- Boolean Checkbox $FIELD_NAME_TITLE$ Field checked by default -->
 <p class="control">
   <label class="checkbox">
-    {!! Form::checkbox('$FIELD_NAME$', $CHECKBOX_VALUE$, []) !!} #$FIELD_NAME_TITLE$#
+    {!! Form::checkbox('$FIELD_NAME$', $CHECKBOX_VALUE$, []) !!} #-$FIELD_NAME_TITLE$-#
   </label>
 </p>
 

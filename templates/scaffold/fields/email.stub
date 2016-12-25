@@ -1,5 +1,5 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
-{!! Form::label('$FIELD_NAME$', '#$FIELD_NAME_TITLE$#:', ['class' => 'label']) !!}
+{!! Form::label('$FIELD_NAME$', '#-$FIELD_NAME_TITLE$-#:', ['class' => 'label']) !!}
 <p class="control has-icon">
     {!! Form::email('$FIELD_NAME$', null, ['class' => 'input', 'placeholder' => 'johndoe@example.com']) !!}
   <i class="fa fa-envelope"></i>

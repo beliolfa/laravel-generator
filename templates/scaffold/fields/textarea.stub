@@ -1,5 +1,5 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
-{!! Form::label('$FIELD_NAME$', '#$FIELD_NAME_TITLE$#:', ['class' => 'label']) !!}
+{!! Form::label('$FIELD_NAME$', '#-$FIELD_NAME_TITLE$-#:', ['class' => 'label']) !!}
 <p class="control">
       {!! Form::textarea('$FIELD_NAME$', null, ['class' => 'textarea', 'rows' => '5']) !!}
 </p>

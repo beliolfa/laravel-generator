@@ -1,10 +1,10 @@
 <?php
 
 return [
+    'Brand'    => 'Marca|Marcas',
     'Customer' => 'Cliente|Clientes',
+    'Model'    => 'Modelo|Modelos',
+    'Product'  => 'Producto|Productos',
     'Provider' => 'Proveedor|Proveedores',
     'Supplier' => 'Proveedor|Proveedores',
-    'Product'  => 'Producto|Productos',
-    'Box'      => 'Caja|Cajas',
-    'Table'    => 'Mesa|Mesas'
 ];

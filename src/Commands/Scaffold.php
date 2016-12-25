@@ -44,5 +44,8 @@ class Scaffold extends Command
 
         $translate->views();
         $this->info('Views translated');
+
+        $translate->fields();
+        $this->info('Fields translated');
     }
 }

@@ -43,12 +43,27 @@ class Translator
         return 'Views have been translated.';
     }
 
+    public function fields()
+    {
+        $path =  "{$this->getViewsPath()}/fields.blade.php";
+        $this->translateFields($path);
+    }
+
     protected function translate($path, $plural = false)
     {
         $translatedModel = $this->getTranslation($this->model, 'models', $plural);
         $model = $plural ? str_plural($this->model) : $this->model;
 
         file_put_contents($path, str_replace("#-{$model}-#", $translatedModel, file_get_contents($path)));
+    }
+    
+    protected function translateFields($path) 
+    {
+        file_put_contents($path, preg_replace_callback(
+            "/\#-(\w+)\-#/",
+            function($m) {  return $this->getTranslation($m[1], 'fields'); },
+            file_get_contents($path)
+        ));
     }
 
     protected function getFile($view)
@@ -78,15 +93,20 @@ class Translator
         }
 
         if ($file["type"] == 'view') {
-            $path = config('infyom.laravel_generator.path.views', resource_path('views/'));
-            $folder = strtolower(str_plural($this->model));
-            return "{$path}{$folder}/{$file["name"]}.blade.php";
+            return "{$this->getViewsPath()}/{$file["name"]}.blade.php";
         }
 
         if ($file["type"] == 'menu') {
             $menuFile = config('infyom.laravel_generator.add_on.menu.menu_file', 'layouts/menu.blade.php');
             return resource_path("views/{$menuFile}");
         }
+    }
+
+    protected function getViewsPath()
+    {
+        $path = config('infyom.laravel_generator.path.views', resource_path('views/'));
+        $folder = strtolower(str_plural($this->model));
+        return "{$path}{$folder}";
     }
 
     public function getTranslation($line, $file, $plural = false)
