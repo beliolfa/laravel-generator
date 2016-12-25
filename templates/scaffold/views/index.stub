@@ -5,7 +5,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    $MODEL_NAME_PLURAL_HUMAN$
+                    #-$MODEL_NAME_PLURAL_HUMAN$-#
                 </h1>
                 <h2 class="subtitle is-pulled-right">
                     <a class="button is-info" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Añadir</a>

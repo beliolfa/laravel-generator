@@ -3,6 +3,7 @@
 namespace Disitec\LaravelGenerator\Commands;
 
 use Disitec\LaravelGenerator\Translator\Translate;
+use Disitec\LaravelGenerator\Translator\Translator;
 use Illuminate\Console\Command;
 
 class Scaffold extends Command
@@ -36,12 +37,12 @@ class Scaffold extends Command
             '--skip' => 'scaffold_requests, repository'
         ]);
 
-        $translate = new Translate($model);
+        $translate = new Translator($model);
         
         $translate->controller();
-        $translate->views();
-        
-        $this->info('Views translated');
+        $this->info('Controller translated');
 
+        $translate->views();
+        $this->info('Views translated');
     }
 }
