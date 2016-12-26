@@ -27,8 +27,8 @@
                             <p class="control">
                                 <input name="name" class="input{{ $errors->has('name') ? ' is-danger' : '' }}" type="text" placeholder="John Smith" value="{{ old('name') }}" required autofocus>
                             </p>
-                            @if ($errors->has('email'))
-                                <span class="help is-danger">{{ $errors->first('email') }}</span>
+                            @if ($errors->has('name'))
+                                <span class="help is-danger">{{ $errors->first('name') }}</span>
                             @endif
                             <label class="label">E-mail</label>
                             <p class="control">
