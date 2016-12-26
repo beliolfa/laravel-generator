@@ -16,6 +16,10 @@
                                     <p>Invitado</p>
                                 @else
                                     <p>{{ Auth::user()->name}}</p>
+                                    <form action="/logout" method="post">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="button is-link fa fa-sign-out"></button>
+                                    </form>
                                 @endif
                             </strong>
                         </p>
