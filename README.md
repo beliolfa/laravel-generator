@@ -48,7 +48,7 @@ Add following service providers into your providers array in `config/app.php`
 
   This command will create the config, the simplified stub for controller and model and the menu layout.
 
-  ### Step 5: Publish tranlations
+### Step 5: Publish tranlations
 
    If you want to translate your Views you can run `php artisan vendor:publish --tag=disitec-generator.lang`
 
