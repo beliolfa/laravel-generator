@@ -1,12 +1,12 @@
-# Scaffold Laravel Model, Controller, Routes and Views using Bulma CSS Framework
+# Scaffold Laravel Model, Migration, Controller, Routes and Views.
 
-This is an extension [infyomlabs/laravel-generator](https://github.com/InfyOmLabs/laravel-generator) package. Documentation is located [here](http://labs.infyom.com/laravelgenerator)
+This is an extension of the [infyomlabs/laravel-generator](https://github.com/InfyOmLabs/laravel-generator) package. Documentation is located [here](http://labs.infyom.com/laravelgenerator)
 
 If you prefer less boilerplate in your generated stuff you can use this package instead.
 
 * Controllers without repositories
 * Models without soft deletes and based in conventions for table and key names
-* Clean views using Bulma Css. No javascript at all.
+* Clean views using Bulma CSS. No javascript at all.
 * Language files for automatic translate fields in your views (if you use conventional names in english for your database)
 
 ## Install
@@ -66,7 +66,8 @@ One for the models, with this structure (You can use a pipe for declaring plural
         'Supplier' => 'Proveedor|Proveedores',
     ];
 ```
-    And one for the fields:
+
+And one for the fields:
 
 ```
     return [
