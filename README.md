@@ -15,7 +15,7 @@ If you prefer less boilerplate in your generated stuff you can use this package 
 
 ```
 "require": {
-    "disitec/laravel-generator": "dev-master@dev",
+    "disitec/laravel-generator": "^0.1",
     "infyomlabs/laravel-generator": "5.3.x-dev"
 }
  ```
