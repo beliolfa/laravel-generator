@@ -1,0 +1,23 @@
+<?php
+
+namespace $NAMESPACE_MODEL$;
+
+use Illuminate\Database\Eloquent\Model;
+
+class $MODEL_NAME$ extends Model
+{
+    public $fillable = [
+        $FIELDS$
+    ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        $RULES$
+    ];
+
+    $RELATIONS$
+}
