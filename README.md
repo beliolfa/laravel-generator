@@ -1,6 +1,3 @@
-Simplified Wrapper to infyomlabs/laravel-generator
-======================================================
-
 # Scaffold Laravel Model, Controller, Routes and Views using Bulma CSS Framework
 
 This is an extension [infyomlabs/laravel-generator](https://github.com/InfyOmLabs/laravel-generator) package. Documentation is located [here](http://labs.infyom.com/laravelgenerator)
@@ -12,15 +9,14 @@ If you prefer less boilerplate in your generated stuff you can use this package 
 * Clean views using Bulma Css. No javascript at all.
 * Language files for automatic translate fields in your views (if you use conventional names in english for your database)
 
-## Usage
+## Install
 
 ### Step 1: Add the package and its dependencies to composer.json
 
 ```
 "require": {
     "disitec/laravel-generator": "dev-master@dev",
-    "infyomlabs/laravel-generator": "5.3.x-dev",
-    "laravelcollective/html": "^5.3.0"
+    "infyomlabs/laravel-generator": "5.3.x-dev"
 }
  ```
 Run `composer udpdate`
@@ -34,19 +30,19 @@ Add following service providers into your providers array in `config/app.php`
  \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
  Collective\Html\HtmlServiceProvider::class,
  Laracasts\Flash\FlashServiceProvider::class,
- ```
+```
 
- ### Step 3: Add Aliases
+### Step 3: Add Aliases
 
  Add following aliases into your aliases array in `config/app.php`
 
- ```
+```
   'Form' => Collective\Html\FormFacade::class,
   'Html' => Collective\Html\HtmlFacade::class,
   'Flash'     => Laracasts\Flash\Flash::class,
-  ```
+```
 
-  ### Step 4: Init the package
+### Step 4: Init the package
 
    Run this command in console: `php artisan disitec:init`
 
@@ -60,7 +56,7 @@ You have two files:
 
 One for the models, with this structure (You can use a pipe for declaring plural)
 
-   ```
+```
     return [
         'Brand'    => 'Marca|Marcas',
         'Customer' => 'Cliente|Clientes',
@@ -69,14 +65,24 @@ One for the models, with this structure (You can use a pipe for declaring plural
         'Provider' => 'Proveedor|Proveedores',
         'Supplier' => 'Proveedor|Proveedores',
     ];
-    ```
+```
     And one for the fields:
 
-    ```
+```
     return [
         'Name' => 'Nombre',
         'Email' => 'E-mail',
     ];
-    ```
+```
 
-    You can create one folder for each locale that you need.
+You can create one folder for each locale that you need.
+
+## Usage
+
+Run `php artisan disitec:scaffold YourModel`
+
+Example:
+
+`php artisan disitec:scaffold Customer`
+
+You'll be prompted for the fields. You can follow [this guide](http://labs.infyom.com/laravelgenerator/docs/5.3/getting-started#field-inputs) from the original package.
