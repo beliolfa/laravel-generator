@@ -6,7 +6,7 @@ class Translator
     protected $views = [
         'create',
         'edit',
-        'show',
+        'show_fields',
         'index' => [
             'plural' => true
         ],
