@@ -113,6 +113,7 @@ class Translator
 
     public function getTranslation($line, $file, $plural = false)
     {
+        $line = camel_case($line);
         $needle = "disitec::{$file}.{$line}";
 
         $key = trans_choice($needle, $plural ? 2 : 1);

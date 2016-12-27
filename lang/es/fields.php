@@ -1,8 +1,9 @@
 <?php
 
 return [
-    'Name' => 'Nombre',
-    'Email' => 'E-mail',
-    'Created At' => 'Creado',
-    'Updated At' => 'Editado'
+    'id' => 'Id',
+    'name' => 'Nombre',
+    'email' => 'E-mail',
+    'createdAt' => 'Creado',
+    'updatedAt' => 'Editado'
 ];

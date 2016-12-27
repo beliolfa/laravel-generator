@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'Brand'    => 'Marca|Marcas',
-    'Customer' => 'Cliente|Clientes',
-    'Product'  => 'Producto|Productos',
-    'Provider' => 'Proveedor|Proveedores',
-    'Supplier' => 'Proveedor|Proveedores',
+    'brand'    => 'Marca|Marcas',
+    'customer' => 'Cliente|Clientes',
+    'product'  => 'Producto|Productos',
+    'provider' => 'Proveedor|Proveedores',
+    'supplier' => 'Proveedor|Proveedores',
 ];
