@@ -62,7 +62,7 @@ class Translator
     protected function translateFields($path) 
     {
         file_put_contents($path, preg_replace_callback(
-            "/\#-(\w+)\-#/",
+            "/\#-([\w|\s_]+)\-#/",
             function($m) {  return $this->getTranslation($m[1], 'fields'); },
             file_get_contents($path)
         ));
@@ -111,15 +111,15 @@ class Translator
         return "{$path}{$folder}";
     }
 
-    public function getTranslation($line, $file, $plural = false)
+    public function getTranslation($word, $file, $plural = false)
     {
-        $line = camel_case($line);
-        $needle = "disitec::{$file}.{$line}";
+        $line = camel_case($word);
+        $needle = ":{$file}.{$line}";
 
-        $key = trans_choice($needle, $plural ? 2 : 1);
+        $key = trans_choice("disitec:{$needle}", $plural ? 2 : 1);
 
         if ($key === $needle) {
-            return $line;
+            return $word;
         }
 
         return $key;
