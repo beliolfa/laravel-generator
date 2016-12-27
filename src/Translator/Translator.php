@@ -16,6 +16,12 @@ class Translator
         ]
     ];
 
+    protected $fieldsViews = [
+        'fields',
+        'show_fields',
+        'table'
+    ];
+
     protected $model;
 
     public function __construct($model)
@@ -45,10 +51,10 @@ class Translator
 
     public function fields()
     {
-        $path =  "{$this->getViewsPath()}/fields.blade.php";
-        $pathShow = "{$this->getViewsPath()}/show_fields.blade.php";
-        $this->translateFields($path);
-        $this->translateFields($pathShow);
+        foreach ($this->fieldsViews as $fieldView) {
+            $path =  "{$this->getViewsPath()}/{$fieldView}.blade.php";
+            $this->translateFields($path);
+        }
     }
 
     protected function translate($path, $plural = false)

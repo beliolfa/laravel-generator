@@ -58,11 +58,11 @@ One for the models, with this structure (You can use a pipe for declaring plural
 
 ```
     return [
-        'Brand'    => 'Marca|Marcas',
-        'Customer' => 'Cliente|Clientes',
-        'Product'  => 'Producto|Productos',
-        'Provider' => 'Proveedor|Proveedores',
-        'Supplier' => 'Proveedor|Proveedores',
+        'brand'    => 'Marca|Marcas',
+        'customer' => 'Cliente|Clientes',
+        'product'  => 'Producto|Productos',
+        'provider' => 'Proveedor|Proveedores',
+        'supplier' => 'Proveedor|Proveedores',
     ];
 ```
 
@@ -70,8 +70,11 @@ And one for the fields:
 
 ```
     return [
-        'Name' => 'Nombre',
-        'Email' => 'E-mail',
+        'id' => 'Id',
+            'name' => 'Nombre',
+            'email' => 'E-mail',
+            'createdAt' => 'Creado',
+            'updatedAt' => 'Editado'
     ];
 ```
 
