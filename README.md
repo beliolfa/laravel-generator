@@ -60,7 +60,6 @@ One for the models, with this structure (You can use a pipe for declaring plural
     return [
         'Brand'    => 'Marca|Marcas',
         'Customer' => 'Cliente|Clientes',
-        'Model'    => 'Modelo|Modelos',
         'Product'  => 'Producto|Productos',
         'Provider' => 'Proveedor|Proveedores',
         'Supplier' => 'Proveedor|Proveedores',
