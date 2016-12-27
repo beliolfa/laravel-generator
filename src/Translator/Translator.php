@@ -6,7 +6,7 @@ class Translator
     protected $views = [
         'create',
         'edit',
-        'show_fields',
+        'show',
         'index' => [
             'plural' => true
         ],
@@ -46,7 +46,9 @@ class Translator
     public function fields()
     {
         $path =  "{$this->getViewsPath()}/fields.blade.php";
+        $pathShow = "{$this->getViewsPath()}/show_fields.blade.php";
         $this->translateFields($path);
+        $this->translateFields($pathShow);
     }
 
     protected function translate($path, $plural = false)
