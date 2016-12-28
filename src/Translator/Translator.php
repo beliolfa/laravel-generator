@@ -113,7 +113,7 @@ class Translator
     protected function getViewsPath()
     {
         $path = config('infyom.laravel_generator.path.views', resource_path('views/'));
-        $folder = strtolower(str_plural($this->model));
+        $folder = snake_case(str_plural($this->model));
         return "{$path}{$folder}";
     }
 
